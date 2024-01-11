@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Speedrun List</title>
+    </head>
+    <body>
+        <header>
+            <h1>Speedrun List</h1>
+        </header>
+        {% for game in featuredGames %}
+        <h2>{{ game["jeux"] }}</h2>
+        <p>Runner: {{ game["runner"] }}</p>
+        <p>Timer: {{ game["timer"] }}</p>
+        <p>Category: {{ game["cat"] }}</p>
+        {% endfor %}
+        <br><br><br><br>
+        <p>entrez vos informations pour ajouter votre speedrun</p>
+        <br><br>
+        {% for player in players %}
+            <li>{{ player.name }} - {{ player.pseudo }} - {{ player.age }}</li>
+        {% endfor %}
+        
+        <br><br>
+
+        {# <form method="post" onclick=insertplayer()>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required/>
+            <br>
+
+            <label for="pseudo">Pseudo:</label>
+            <input type="text" id="pseudo" name="pseudo" required/>
+            <br>
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required/>
+            <br>
+
+            <input type="submit" value="Submit"/>
+        </form> #}
+        {% block body %}
+            <h1>Insert Data</h1>
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit">Submit</button>
+            {{ form_end(form) }}
+        {% endblock %}
+    </body>
+</html>

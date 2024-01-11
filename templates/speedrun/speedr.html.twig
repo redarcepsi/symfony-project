@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Speedrun Details</title>
+</head>
+<body>
+    <header>
+        <h1>Speedrun Details</h1>
+    </header>
+
+    <a href="/speedrun/speedrunliste">speedrun liste</a>
+
+    <main>
+        <h2>{{ "jeux" }}</h2>
+        <p>Runner: {{ "runner"}}</p>
+        <p>Timer: {{ "timer" }}</p>
+        <p>Category: {{ "cat" }}</p>
+        <p>Date: {{ "date" }}</p>
+        <p>Plateform: {{ "plateform" }}</p>
+    </main>
+
+    <footer>
+        <p>&copy; {{ 'now' | date('Y') }} Your Speedrun Website</p>
+    </footer>
+</body>
+</html>
